@@ -37,6 +37,19 @@
       }
     }
   </script>
+
+  <!-- Tambahkan skrip modul SDK di bagian bawah -->
+  <script type="module">
+    import { sdk } from "https://esm.sh/@farcaster/miniapp-sdk";
+
+    window.addEventListener("load", async () => {
+      try {
+        await sdk.actions.ready();
+        console.log("Farcaster SDK ready — splash screen seharusnya disembunyikan");
+      } catch (err) {
+        console.error("Gagal memanggil sdk.actions.ready():", err);
+      }
+    });
+  </script>
 </body>
 </html>
-
