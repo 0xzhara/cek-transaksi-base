@@ -1,25 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Cek Transaksi Base</title>
-  <script type="module">
-    import { sdk } from "https://esm.sh/@farcaster/miniapp-sdk";
-
-    window.addEventListener("DOMContentLoaded", async () => {
-      // TODO: di sini nanti bisa tambahin logic cek transaksi wallet
-      document.getElementById("app").innerHTML = "<h2>Miniapp siap dipakai 🚀</h2>";
-
-      // Wajib panggil ini biar splash screen hilang
-      await sdk.actions.ready();
-      console.log("Miniapp ready!");
-    });
-  </script>
 </head>
 <body>
-  <div id="app">
-    <p>Loading...</p>
-  </div>
+  <h2>Cek Jumlah Transaksi di Base</h2>
+  <input type="text" id="wallet" placeholder="Paste alamat wallet di sini">
+  <button onclick="cekTransaksi()">Cek Transaksi</button>
+  <p id="hasil"></p>
+
+  <script>
+    async function cekTransaksi() {
+      const alamat = document.getElementById('wallet').value;
+      if (!alamat) {
+        document.getElementById('hasil').innerText = "Tolong masukkan alamat wallet.";
+        return;
+      }
+
+      document.getElementById('hasil').innerText = "Sedang mengecek...";
+
+      try {
+        // Panggil API Blockscout untuk Base
+        const url = `https://base.blockscout.com/api?module=account&action=txlist&address=${alamat}`;
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (data.status === "1") {
+          const jumlah = data.result.length;
+          document.getElementById('hasil').innerText = `Jumlah transaksi: ${jumlah}`;
+        } else {
+          document.getElementById('hasil').innerText = "Tidak ada transaksi atau alamat tidak valid.";
+        }
+      } catch (err) {
+        document.getElementById('hasil').innerText = "Terjadi error saat mengambil data.";
+      }
+    }
+  </script>
 </body>
 </html>
+
