@@ -2,13 +2,17 @@
   "miniapp": {
     "version": "1",
     "name": "Cek Transaksi",
-    "iconUrl": "https://cek-transaksi-base.vercel.app/icon.png",
+    "iconUrl": "https://cek-transaksi-base.vercel.app/image.png",
     "homeUrl": "https://cek-transaksi-base.vercel.app/",
     "splashImageUrl": "https://cek-transaksi-base.vercel.app/splash.png",
     "splashBackgroundColor": "#6200EA",
+    "heroImageUrl": "https://cek-transaksi-base.vercel.app/hero.png",
+    "screenshotUrls": [
+      "https://cek-transaksi-base.vercel.app/screenshot1.png"
+    ],
     "subtitle": "Cek transaksi Base",
-    "description": "Pantau dan cek transaksi jaringan Base dengan mudah.",
+    "description": "Pantau transaksi onchain jaringan Base hanya dengan copy paste alamat wallet.",
     "primaryCategory": "finance",
-    "tags": ["base", "transaksi", "crypto"]
+    "tags": ["base", "transaksi", "crypto", "wallet"]
   }
 }
