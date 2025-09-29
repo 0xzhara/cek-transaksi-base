@@ -1,13 +1,7 @@
 {
-  "miniapp": {
-    "version": "1",
-    "name": "Cek Transaksi Base",
-    "iconUrl": "https://cek-transaksi-base.vercel.app/icon.png",
-    "homeUrl": "https://cek-transaksi-base.vercel.app",
-    "splashBackgroundColor": "#ffffff",
-    "requiredChains": [
-      "eip155:8453"
-    ],
-    "description": "Miniapp sederhana untuk cek jumlah transaksi wallet di jaringan Base."
+  "accountAssociation": {
+    "header": "eyJmaWQiOjMwMzMwNCwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDYyMjJCNTUyQ2Q3YTIwQzFGOURiNEY3YzFCQ2VmMjJlMzI3MjQ1QjkifQ",
+    "payload": "eyJkb21haW4iOiJjZWstdHJhbnNha3NpLWJhc2UudmVyY2VsLmFwcCJ9",
+    "signature": "mTK1sH+N2rD3aX5LvBCW9pxhBZOxsy2zDOWHo0IPYMReW024sDCDFeL6PmkwydMmWp6h2WErlyfymr4bRPS/BRw="
   }
 }
