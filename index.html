@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cek Transaksi Base</title>
+</head>
+<body>
+  <h2>Cek Jumlah Transaksi di Base</h2>
+  <input type="text" id="wallet" placeholder="Paste alamat wallet di sini">
+  <button onclick="cekTransaksi()">Cek Transaksi</button>
+  <p id="hasil"></p>
+
+  <script>
+    async function cekTransaksi() {
+      const alamat = document.getElementById('wallet').value;
+      if (!alamat) {
+        document.getElementById('hasil').innerText = "Tolong masukkan alamat wallet.";
+        return;
+      }
+
+      document.getElementById('hasil').innerText = "Sedang mengecek...";
+
+      try {
+        // Panggil API Blockscout untuk Base
+        const url = `https://base.blockscout.com/api?module=account&action=txlist&address=${alamat}`;
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (data.status === "1") {
+          const jumlah = data.result.length;
+          document.getElementById('hasil').innerText = `Jumlah transaksi: ${jumlah}`;
+        } else {
+          document.getElementById('hasil').innerText = "Tidak ada transaksi atau alamat tidak valid.";
+        }
+      } catch (err) {
+        document.getElementById('hasil').innerText = "Terjadi error saat mengambil data.";
+      }
+    }
+  </script>
+</body>
+</html>
