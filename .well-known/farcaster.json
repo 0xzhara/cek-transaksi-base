@@ -1,18 +1,13 @@
 {
   "miniapp": {
     "version": "1",
-    "name": "Cek Transaksi",
-    "iconUrl": "https://cek-transaksi-base.vercel.app/image.png",
-    "homeUrl": "https://cek-transaksi-base.vercel.app/",
-    "splashImageUrl": "https://cek-transaksi-base.vercel.app/splash.png",
-    "splashBackgroundColor": "#6200EA",
-    "heroImageUrl": "https://cek-transaksi-base.vercel.app/hero.png",
-    "screenshotUrls": [
-      "https://cek-transaksi-base.vercel.app/screenshot1.png"
+    "name": "Cek Transaksi Base",
+    "iconUrl": "https://cek-transaksi-base.vercel.app/icon.png",
+    "homeUrl": "https://cek-transaksi-base.vercel.app",
+    "splashBackgroundColor": "#ffffff",
+    "requiredChains": [
+      "eip155:8453"
     ],
-    "subtitle": "Cek transaksi Base",
-    "description": "Pantau transaksi onchain jaringan Base hanya dengan copy paste alamat wallet.",
-    "primaryCategory": "finance",
-    "tags": ["base", "transaksi", "crypto", "wallet"]
+    "description": "Miniapp sederhana untuk cek jumlah transaksi wallet di jaringan Base."
   }
 }
